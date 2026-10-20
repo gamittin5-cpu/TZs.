@@ -1,0 +1,13 @@
+{
+  "name": "tanzania-mkopo-portal",
+  "version": "2.0.0",
+  "description": "Lango la Maombi ya Mkopo Tanzania",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
